@@ -1,0 +1,15 @@
+conda create --name tweepy python=3.7
+conda activate tweepy
+conda install -c conda-forge tweepy
+conda install -c conda-forge pykafka
+conda install -c conda-forge pyspark
+conda install jupyter notebook
+
+#
+~/kafka_2.13-3.0.0$ ./bin/zookeeper-server-start.sh config/zookeeper.properties 
+
+~/kafka_2.13-3.0.0$ bin/kafka-server-start.sh config/server.properties
+
+~/kafka_2.13-3.0.0$ bin/kafka-topics.sh --create --partitions 1 --replication-factor 1 --topic tweet --bootstrap-server localhost:9092
+
+
